@@ -7,8 +7,14 @@
     "start": "bankai . --open",
     "test": "./scripts/test"
   },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
   "dependencies": {
     "beldown": "^1.1.0",
+    "brfs": "^1.4.3",
     "choo": "^4.0.0-5",
     "choo-log": "^3.0.0",
     "choo-model": "^1.0.0",

@@ -4,6 +4,7 @@ const html = require('choo/html')
 const css = require('sheetify')
 // const md = require('beldown')
 const choo = require('choo')
+const fs = require('fs')
 
 const prefix = css`
   :host { background-color: rgb(255, 195, 228) }
@@ -16,7 +17,7 @@ const slides = [
     <main class="mw7">
       <h1 class="f-subheadline f-headline-ns bold sans-serif mb4">
         <span>CH</span>
-        <span style="letter-spacing: -0.1em;"> </span>
+        <span style="letter-spacing: -0.3em;"> </span>
         <span>O</span>
         <span style="letter-spacing: 0.07em;"> </span>
         <span>O</span>
@@ -56,7 +57,7 @@ const slides = [
   `,
   html`
     <main class="mw7">
-      <h3 class="f2 ttu">To quote Julia Evans (b0rk):</h3>
+      <h2 class="f1 ttu">To quote Julia Evans (b0rk)</h3>
       <ol class="list f2 lh-copy">
         <li class="underline">
           1. Ask questions!
@@ -80,9 +81,9 @@ const slides = [
   `,
   html`
     <main class="mw7">
-    <h1 class="f2 ttu">
-    Something that's...
-    </h1>
+      <h2 class="f1 ttu" style="text-align: right">
+        A framework that's...
+      </h1>
       <ul class="list f2 lh-copy">
         <li class="underline mt3">
           ,fast to build
@@ -97,6 +98,127 @@ const slides = [
           ,,,,hackable
         </li>
       </ul>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        Building a framework is a last resort
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        Building frameworks
+      </h1>
+      <ul class="list f2 lh-copy">
+        <li class="underline mt2">
+          Always room for things to be added__
+        </li>
+        <li class="underline mt2">
+          Large surface area________
+        </li>
+        <li class="underline mt2">
+          Lots of glue code__
+        </li>
+        <li class="underline mt2">
+          ___ Tradeoffs are hard
+        </li>
+      </ul>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        frameworks make cool ideas accessible
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: right">
+        building frameworks is pretty cool
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: justify">
+        getting feedback and improving things is heaps cool
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        ,mini case
+      </h1>
+      <h2 class="f1" style="text-align: right">
+        batched rendering performance
+      </h2>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f1 ttu">
+        unoptimized
+      </h1>
+      <img src=${'data:img/png;base64,' + fs.readFileSync('./screen1.png', 'base64')}>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f1 ttu">
+        pushing boundries of code
+      </h1>
+      <img src=${'data:img/png;base64,' + fs.readFileSync('./screen2.png', 'base64')}>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f1 ttu">
+        fixing the design flaw
+      </h1>
+      <img src=${'data:img/png;base64,' + fs.readFileSync('./screen3.png', 'base64')}>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f1 ttu underline">
+        what are choo's 🆒 ideas
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: right">
+        event-based recursive asynchronous data flow
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: justify">
+        framework-independent elements
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: justify">
+        <input placeholder="and DOM diffing">
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: justify">
+        <input onkeydown=${(e) => e.stopPropagation()}>
+      </h1>
+      <h1 class="f-5 ttu" style="text-align: justify">
+        yay for dom diffing!
+      </h1>
     </main>
   `
 ]
@@ -141,7 +263,7 @@ app.model({
   subscriptions: {
     keydown: (send, done) => {
       document.body.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft' || e.key === 'j') send('slides:left', done)
+        if (e.key === 'ArrowLeft' || e.key === 'h') send('slides:left', done)
         if (e.key === 'ArrowRight' || e.key === 'l') send('slides:right', done)
       })
     }
