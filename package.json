@@ -1,0 +1,25 @@
+{
+  "name": "2016-talk-nodefest-tokyo",
+  "description": "Tokyo nodefest 2016 talk",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "bankai . --open",
+    "test": "./scripts/test"
+  },
+  "dependencies": {
+    "beldown": "^1.1.0",
+    "choo": "^4.0.0-5",
+    "choo-log": "^3.0.0",
+    "choo-model": "^1.0.0",
+    "choo-persist": "^1.0.3",
+    "insert-css": "^1.1.0",
+    "tachyons": "^4.5.5"
+  },
+  "devDependencies": {
+    "bankai": "^4.0.2",
+    "dependency-check": "^2.6.0",
+    "standard": "^8.5.0",
+    "standard-markdown": "^2.2.0"
+  }
+}
