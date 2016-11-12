@@ -275,6 +275,26 @@ function mainView () {
         </li>
       </ul>
     </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        [ demos ]
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        Thanks for listening!
+      </h1>
+      <h2 class="f2">
+        Twitter / yoshuawuyts
+      </h2>
+      <h2 class="f2">
+        GitHub / yoshuawuyts
+      </h2>
+    </main>
   `
 ]
 
