@@ -74,6 +74,37 @@ const slides = [
   `,
   html`
     <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: end">
+        Syntax time!
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu mb0">
+        sup choo
+      </h1>
+      <pre class="f3 tl mt4 self-start pa4" style="background-color: #fff">
+        ${`
+const html = require('choo/html')
+const choo = require('choo')
+
+const app = choo()
+app.router(['/', mainView])
+document.body.appendChild(app.start())
+
+function mainView () {
+  return html\`
+    <h1>hello tokyo</h1>
+  \`
+}
+        `
+        }
+      </pre>
+    </main>
+  `,
+  html`
+    <main class="mw7">
       <h1 class="f-5 ttu">
         choo origin. .story time
       </h1>
@@ -207,18 +238,42 @@ const slides = [
   html`
     <main class="mw7">
       <h1 class="f-5 ttu" style="text-align: justify">
-        <input placeholder="and DOM diffing">
+        <input onkeydown=${(e) => e.preventDefault()} placeholder="and DOM diffing">
       </h1>
     </main>
   `,
   html`
     <main class="mw7">
       <h1 class="f-5 ttu" style="text-align: justify">
-        <input onkeydown=${(e) => e.stopPropagation()}>
+        <input onkeydown=${(e) => e.preventDefault()}>
       </h1>
       <h1 class="f-5 ttu" style="text-align: justify">
         yay for dom diffing!
       </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        where to after [_v4.0_]
+      </h1>
+      <ul class="list f2 lh-copy">
+        <li class="underline mt2">
+          ++iterate BANKAI streaming asset compiler
+        </li>
+        <li class="underline mt2">
+          _____build a server framework (merry!)
+        </li>
+        <li class="underline mt2">
+          build out {base,form}-elements______--
+        </li>
+        <li class="underline mt2">
+          ______improve perf
+        </li>
+        <li class="underline mt2">
+          improve models____
+        </li>
+      </ul>
     </main>
   `
 ]
