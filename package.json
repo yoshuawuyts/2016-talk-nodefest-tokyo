@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bankai build",
+    "build": "bankai build && surge ./dist/",
     "start": "bankai . --open",
     "test": "./scripts/test"
   },
@@ -24,6 +24,7 @@
     "bankai": "^4.0.2",
     "dependency-check": "^2.6.0",
     "standard": "^8.5.0",
-    "standard-markdown": "^2.2.0"
+    "standard-markdown": "^2.2.0",
+    "surge": "^0.18.0"
   }
 }

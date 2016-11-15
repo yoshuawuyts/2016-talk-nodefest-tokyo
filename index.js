@@ -133,7 +133,7 @@ function mainView () {
   `,
   html`
     <main class="mw7">
-      <h1 class="f-5 ttu">
+      <h1 class="f-5 ttu" style="text-align: justify">
         Building a framework is a last resort
       </h1>
     </main>
@@ -161,7 +161,7 @@ function mainView () {
   `,
   html`
     <main class="mw7">
-      <h1 class="f-5 ttu">
+      <h1 class="f-5 ttu" style="text-align: left">
         frameworks make cool ideas accessible
       </h1>
     </main>
