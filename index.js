@@ -2,15 +2,14 @@ const log = require('choo-log')
 const mount = require('choo/mount')
 const html = require('choo/html')
 const css = require('sheetify')
-// const md = require('beldown')
 const choo = require('choo')
 const fs = require('fs')
+
+;css('tachyons')
 
 const prefix = css`
   :host { background-color: rgb(255, 195, 228) }
 `
-
-css('tachyons')
 
 const slides = [
   html`
@@ -133,13 +132,6 @@ function mainView () {
   `,
   html`
     <main class="mw7">
-      <h1 class="f-5 ttu" style="text-align: justify">
-        Building a framework is a last resort
-      </h1>
-    </main>
-  `,
-  html`
-    <main class="mw7">
       <h1 class="f-5 ttu">
         Building frameworks
       </h1>
@@ -168,22 +160,61 @@ function mainView () {
   `,
   html`
     <main class="mw7">
-      <h1 class="f-5 ttu" style="text-align: right">
-        building frameworks is pretty cool
+      <h1 class="f-5 ttu" style="text-align: left">
+        What if we could do dom diffing without a virtual DOM?
       </h1>
     </main>
   `,
   html`
     <main class="mw7">
-      <h1 class="f-5 ttu" style="text-align: justify">
-        getting feedback and improving things is heaps cool
+      <h1 class="f-5 ttu" style="text-align: left">
+        Morphdom!
       </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: left">
+        [ MORPHDOM DEMO ]
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu" style="text-align: left">
+        What if we could turn our router into a sitemap?
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu mb0">
+        sup router
+      </h1>
+      <pre class="f3 tl mt4 self-start pa4" style="background-color: #fff">
+        ${`
+const html = require('choo/html')
+const choo = require('choo')
+
+const app = choo()
+app.router([
+  ['/', mainView]
+  ['/foo', fooView]
+  ['/bin', [
+    ['/:bar', binBarView]
+  ]]
+])
+document.body.appendChild(app.start())
+}
+        `
+        }
+      </pre>
     </main>
   `,
   html`
     <main class="mw7">
       <h1 class="f-5 ttu">
-        ,mini case
+        , so how does this all perform?
       </h1>
       <h2 class="f1" style="text-align: right">
         batched rendering performance
@@ -279,7 +310,14 @@ function mainView () {
   html`
     <main class="mw7">
       <h1 class="f-5 ttu">
-        [ demos ]
+        [ show off bankai && sheetify ? ]
+      </h1>
+    </main>
+  `,
+  html`
+    <main class="mw7">
+      <h1 class="f-5 ttu">
+        [ demo time ]
       </h1>
     </main>
   `,
